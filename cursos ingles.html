@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Advertisement</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        header {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #3498db;
+            color: white;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .audio-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .audio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .audio-player {
+            width: 100%;
+            max-width: 500px;
+        }
+        
+        .transcript {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .info-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .info-card {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid #3498db;
+        }
+        
+        .upload-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        .upload-button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .upload-button:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 600px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>English Advertisement</h1>
+        <p>Audio presentation with additional information</p>
+         <nav>
+        <a href="index.html">Inicio</a>
+        <a href="cursos.html">Cursos</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section class="audio-section">
+            <h2>Advertisement Audio</h2>
+            <div class="audio-container">
+                <div class="audio-player">
+                    <!-- Replace the src with your actual audio file path once recorded -->
+                    <audio controls style="width: 100%;">
+                        <source src="" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                
+                <div class="transcript">
+                    <h3>Audio Transcript</h3>
+                    <p>
+                        <!-- Replace this with your actual advertisement script -->
+                        [Your advertisement transcript will appear here. This text should match what you say in your audio recording.]
+                    </p>
+                </div>
+                
+                <button class="upload-button" onclick="alert('This would upload your audio in a real application')">Record New Audio</button>
+            </div>
+        </section>
+        
+        <section class="info-section">
+            <h2>Additional Information</h2>
+            <p>Learn more about our advertisement with the information below:</p>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Key Features</h3>
+                    <ul>
+                        <!-- Replace with your actual information -->
+                        <li>Feature one description</li>
+                        <li>Feature two description</li>
+                        <li>Feature three description</li>
+                        <li>Feature four description</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Benefits</h3>
+                    <ul>
+                        <!-- Replace with your actual information -->
+                        <li>Primary benefit description</li>
+                        <li>Secondary benefit explanation</li>
+                        <li>Additional advantage details</li>
+                        <li>Value proposition statement</li>
+                    </ul>
+                </div>
+                
+                <div class="info-card">
+                    <h3>How It Works</h3>
+                    <ol>
+                        <!-- Replace with your actual information -->
+                        <li>First step explanation</li>
+                        <li>Second step details</li>
+                        <li>Third step process</li>
+                        <li>Final implementation information</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+        
+        <section class="upload-section">
+            <h2>Submit Your Assignment</h2>
+            <p>When you've finished recording your audio and adding all required information, click the button below:</p>
+            <button class="upload-button" onclick="alert('This would submit your assignment in a real application')">Submit Assignment</button>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 English Class Project | Created for educational purposes</p>
+    </footer>
+</body>
+</html>

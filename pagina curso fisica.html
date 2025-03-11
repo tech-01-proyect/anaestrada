@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Física | Portal Educativo</title>
+    <style>
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Variables de color */
+        :root {
+            --primary-color: #2874a6;
+            --secondary-color: #3498db;
+            --accent-color: #5dade2;
+            --light-color: #d6eaf8;
+            --dark-color: #1a5276;
+            --text-color: #333333;
+        }
+        
+        /* Encabezado simplificado */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        
+        /* Banner principal */
+        .banner {
+            height: 400px;
+            background-image: url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .banner::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .banner p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        /* Contenido principal */
+        main {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: var(--dark-color);
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Sección de temas */
+        .topics-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .topic-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .topic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .topic-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .topic-content {
+            padding: 20px;
+        }
+        
+        .topic-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        /* Sección de video */
+        .video-section {
+            background-color: var(--light-color);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 50px 0;
+            border-radius: 10px;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 30px auto 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sección de materiales */
+        .materials {
+            margin: 50px 0;
+        }
+        
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .material-item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+        
+        .material-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+        
+        .material-icon i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        /* Pie de página simplificado */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .banner h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Encabezado simplificado -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="/api/placeholder/50/50" alt="Logo EduPortal">
+                <h1>Curso de Física</h1>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Banner del curso -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>Física: Fundamentos y Aplicaciones</h1>
+            <p>Descubre los principios fundamentales que rigen el universo y aprende a analizar los fenómenos físicos que nos rodean.</p>
+        </div>
+    </section>
+    
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección de introducción -->
+        <section>
+            <h2 class="section-title">Introducción a la Física</h2>
+            <p>En este curso exploraremos los conceptos fundamentales de la física, desde la mecánica clásica hasta la física moderna. A través de explicaciones claras, experimentos prácticos y aplicaciones del mundo real, comprenderás cómo la física explica los fenómenos naturales y tecnológicos que nos rodean.</p>
+            <p>Nuestro enfoque práctico te permitirá no solo entender las teorías, sino también aplicarlas en situaciones reales, desarrollando tu pensamiento crítico y tus habilidades de resolución de problemas.</p>
+        </section>
+        
+        <!-- Sección de temas -->
+        <section id="topics" class="topics">
+            <h2 class="section-title">Temas principales</h2>
+            <div class="topics-container">
+                <!-- Tema 1 -->
+                <div class="topic-card">
+                    <div class="topic-image" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="topic-content">
+                        <h3>Mecánica clásica</h3>
+                        <p>Estudia el movimiento de los cuerpos y las fuerzas que actúan sobre ellos, incluyendo las leyes de Newton, movimiento rectilíneo, circular y parabólico.</p>
+                    </div>
+                </div>
+                
+                <!-- Tema 2 -->
+                <div class="topic-card">
+                    <div class="topic-image" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="topic-content">
+                        <h3>Termodinámica</h3>
+                        <p>Explora la relación entre el calor, la temperatura, la energía y el trabajo, analizando las leyes que gobiernan los sistemas térmicos.</p>
+                    </div>
+                </div>
+                
+                <!-- Tema 3 -->
+                <div class="topic-card">
+                    <div class="topic-image" style="background-image: url('/api/placeholder/300/200');"></div>
+                    <div class="topic-content">
+                        <h3>Ondas y acústica</h3>
+                        <p>Comprende la naturaleza de las ondas mecánicas y electromagnéticas, sus propiedades y aplicaciones en fenómenos como el sonido y la luz.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de video explicativo -->
+        <section class="video-section">
+            <h2 class="section-title">Video explicativo</h2>
+            <p>En este video, nuestro profesor te introduce a los conceptos fundamentales de la física y te muestra por qué esta ciencia es tan fascinante y relevante en nuestra vida diaria.</p>
+            <div class="video-container">
+                <!-- Aquí normalmente iría un iframe de YouTube, pero usaremos un placeholder -->
+                <img src="/api/placeholder/800/450" alt="Video explicativo" style="width: 100%; height: auto;">
+            </div>
+        </section>
+        
+        <!-- Sección de materiales de estudio -->
+        <section class="materials">
+            <h2 class="section-title">Materiales de estudio</h2>
+            <div class="materials-grid">
+                <!-- Material 1 -->
+                <div class="material-item">
+                    <div class="material-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div>
+                        <h4>Libro de texto</h4>
+                        <p>Fundamentos de Física</p>
+                    </div>
+                </div>
+                
+                <!-- Material 2 -->
+                <div class="material-item">
+                    <div class="material-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div>
+                        <h4>Guías de ejercicios</h4>
+                        <p>Problemas resueltos</p>
+                    </div>
+                </div>
+                
+                <!-- Material 3 -->
+                <div class="material-item">
+                    <div class="material-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <div>
+                        <h4>Prácticas de laboratorio</h4>
+                        <p>Experimentos guiados</p>
+                    </div>
+                </div>
+                
+                <!-- Material 4 -->
+                <div class="material-item">
+                    <div class="material-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div>
+                        <h4>Calculadora de fórmulas</h4>
+                        <p>Herramienta interactiva</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de movimiento -->
+        <section>
+            <h2 class="section-title">Estudio del Movimiento</h2>
+            <p>El estudio del movimiento es uno de los pilares fundamentales de la física. A través de la cinemática y la dinámica, analizamos cómo se mueven los objetos y qué fuerzas producen esos movimientos.</p>
+            
+            <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+                <!-- Tipo de movimiento 1 -->
+                <div style="flex: 1; min-width: 300px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--dark-color); margin-bottom: 15px;">Movimiento Rectilíneo Uniforme</h3>
+                    <img src="/api/placeholder/300/200" alt="MRU" style="width: 100%; border-radius: 6px; margin-bottom: 15px;">
+                    <p>El objeto se mueve en línea recta con velocidad constante. La aceleración es cero y la distancia recorrida es proporcional al tiempo.</p>
+                    <p style="margin-top: 10px;"><strong>Ecuación:</strong> x = x₀ + v·t</p>
+                </div>
+                
+                <!-- Tipo de movimiento 2 -->
+                <div style="flex: 1; min-width: 300px; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+                    <h3 style="color: var(--dark-color); margin-bottom: 15px;">Movimiento Rectilíneo Uniformemente Acelerado</h3>
+                    <img src="/api/placeholder/300/200" alt="MRUA" style="width: 100%; border-radius: 6px; margin-bottom: 15px;">
+                    <p>El objeto se mueve en línea recta con aceleración constante. La velocidad cambia uniformemente con el tiempo.</p>
+                    <p style="margin-top: 10px;"><strong>Ecuaciones:</strong> v = v₀ + a·t, x = x₀ + v₀·t + ½a·t²</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Pie de página simplificado -->
+    <footer>
+        <p>&copy; 2025 EduPortal - Curso de Física</p>
+    </footer>
+</body>
+</html>
